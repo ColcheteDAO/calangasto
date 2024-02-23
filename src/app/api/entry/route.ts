@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { client } from "@/database"
-
+export const revalidate = 0;
 //list all entries
 export async function GET() {
     await client.connect();
@@ -8,3 +8,4 @@ export async function GET() {
     const entryData = await entry.find({}).toArray()
     return NextResponse.json({ entryData })
 }
+
