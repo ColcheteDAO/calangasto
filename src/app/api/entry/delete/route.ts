@@ -14,4 +14,5 @@ export async function DELETE(request: NextRequest) {
         "_id": new ObjectId(id)
     })
     return NextResponse.json({ entryData })
+    
 }

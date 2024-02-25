@@ -17,7 +17,6 @@ export default function Home() {
     const response = await fetch("api/entry")
     const entries = await response.json();
     setEntriesData(entries.entryData)
-
   }
 
   async function deleteEntry(id: string) {
@@ -37,9 +36,14 @@ export default function Home() {
 
   return (
     <>
-      <div className="overflow-x-auto container mx-auto">
+      <div className="flex items-center w-full justify-center my-4">
+        <button className="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-700 rounded-md sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+          Create
+        </button>
+      </div>
 
-        <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+      <div className="overflow-x-auto container mx-auto ">
+        <table className="min-w-full divide-y-2 divide-gray-200 text-sm">
           <thead className="ltr:text-left rtl:text-right">
             <tr className="whitespace-nowrap px-4 text-center py-2 font-medium text-gray-900">
               <th className="px-4 py-2">ID</th>
